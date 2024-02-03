@@ -3,7 +3,7 @@ const Navbar = () => {
     <div className='flex w-[14rem] fixed h-full flex-col justify-between border-e bg-gradient-to-b from-slate-200 to-slate-400'>
       <div className='px-4 py-6 '>
         <span className='grid h-10 w-32 place-content-center rounded-lg bg-gray-100 font-bold text-xs text-gray-600'>
-          Logo
+          Zudo
         </span>
         <ul className='mt-6 space-y-1'>
           <li>
