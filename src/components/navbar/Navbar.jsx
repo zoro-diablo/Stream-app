@@ -1,22 +1,22 @@
 const Navbar = () => {
   return (
-    <div className='flex w-[14rem] fixed h-full flex-col justify-between border-e bg-gradient-to-b from-slate-200 to-slate-400'>
+    <div className='flex w-[14rem] fixed h-full flex-col justify-between border-gray-700 border-e bg-gradient-to-b from-gray-900 to-black'>
       <div className='px-4 py-6 '>
-        <span className='grid h-10 w-32 place-content-center rounded-lg bg-gray-100 font-bold text-xs text-gray-600'>
+        <span className='grid h-10 w-full place-content-center rounded-lg bg-gray-800 font-bold text-lg text-gray-200'>
           Zudo
         </span>
         <ul className='mt-6 space-y-1'>
           <li>
             <a
               href=''
-              className='block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700'
+              className='block rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-gray-700'
             >
               General
             </a>
           </li>
           <li>
             <details className='group [&_summary::-webkit-details-marker]:hidden'>
-              <summary className='flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700'>
+              <summary className='flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-400 hover:bg-gray-600 hover:text-gray-700'>
                 <span className='text-sm font-medium'> Teams </span>
                 <span className='shrink-0 transition duration-300 group-open:-rotate-180'>
                   <svg
@@ -37,7 +37,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href=''
-                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
                   >
                     Banned Users
                   </a>
@@ -45,7 +45,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href=''
-                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
                   >
                     Calendar
                   </a>
@@ -56,7 +56,7 @@ const Navbar = () => {
           <li>
             <a
               href=''
-              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
             >
               Billing
             </a>
@@ -64,14 +64,14 @@ const Navbar = () => {
           <li>
             <a
               href=''
-              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
             >
               Invoices
             </a>
           </li>
           <li>
             <details className='group [&_summary::-webkit-details-marker]:hidden'>
-              <summary className='flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700'>
+              <summary className='flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-400 hover:bg-gray-600 hover:text-gray-700'>
                 <span className='text-sm font-medium'> Account </span>
                 <span className='shrink-0 transition duration-300 group-open:-rotate-180'>
                   <svg
@@ -92,7 +92,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href=''
-                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
                   >
                     Details
                   </a>
@@ -100,7 +100,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href=''
-                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                    className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
                   >
                     Security
                   </a>
@@ -109,7 +109,7 @@ const Navbar = () => {
                   <form action='/logout'>
                     <button
                       type='submit'
-                      className='w-full rounded-lg px-4 py-2 text-sm font-medium text-gray-500 [text-align:_inherit] hover:bg-gray-100 hover:text-gray-700'
+                      className='w-full rounded-lg px-4 py-2 text-sm font-medium text-gray-400 [text-align:_inherit] hover:bg-gray-600 hover:text-gray-700'
                     >
                       Logout
                     </button>
@@ -120,11 +120,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className='sticky inset-x-0 bottom-0 border-t border-gray-100'>
-        <a
-          href='#'
-          className='flex items-center gap-2 bg-slate-300 p-4 hover:bg-gray-50'
-        >
+      <div className='sticky inset-x-0 bottom-0 border-t border-gray-800'>
+        <div className='flex items-center gap-2 bg-slate-950 p-4 hover:bg-gray-900'>
           <img
             alt='Man'
             src='https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
@@ -132,11 +129,11 @@ const Navbar = () => {
           />
           <div>
             <p className='text-xs'>
-              <strong className='block font-medium'>Eric Who</strong>
-              <span> dontmind@gmail.com </span>
+              <strong className='block font-medium text-white'>Eric Who</strong>
+              <span className='text-white'> dontmind@gmail.com </span>
             </p>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   );

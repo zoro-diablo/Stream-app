@@ -7,7 +7,7 @@ const RootLayout = () => {
       <div className='w-[16rem]'>
         <Navbar />
       </div>
-      <div className='w-full '>
+      <div className='w-full bg-[#010203]'>
         <Outlet />
       </div>
     </div>
