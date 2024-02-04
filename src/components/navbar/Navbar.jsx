@@ -14,7 +14,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to='/'
-              className='block rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-gray-400'
+              className='block rounded-lg  px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-white'
             >
               Home Page
             </NavLink>
@@ -61,7 +61,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to='shows'
-              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
+              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-white'
             >
               Shows
             </NavLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to='movies'
-              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
+              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-white'
             >
               Movies
             </NavLink>

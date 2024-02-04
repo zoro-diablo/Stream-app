@@ -140,3 +140,7 @@
   flex: 0 0 auto; /* Prevents items from shrinking and ensures they keep their defined size */
   margin-right: 16px; /* Adjust based on your design */
 }
+
+li .active{
+  @apply bg-slate-600 text-white;
+}
