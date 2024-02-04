@@ -11,6 +11,9 @@ import Home from './routes/Home';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
 import ProductDetails from './components/product/ProductDetails';
+import Shows from './routes/Shows';
+import Movies from './routes/Movies';
+import ProductMovDetails from './components/product/ProductMovDetails';
 
 const queryClient = new QueryClient();
 
@@ -18,7 +21,10 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path='details/:movieId' element={<ProductDetails />} />
+      <Route path='shows' element={<Shows />} />
+      <Route path='movies' element={<Movies />} />
+      <Route path='shows/:movieId' element={<ProductDetails />} />
+      <Route path='movies/:videoId' element={<ProductMovDetails />} />
     </Route>
   )
 );

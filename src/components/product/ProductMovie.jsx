@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useFetchData } from '../../hooks/useFetchData';
+import { useFetchMov } from '../../hooks/useFetchMov';
 import Error from '../error/Error';
 import Loader from '../loader/Loader';
 
-const Product = () => {
-  const { data, isLoading, isError, error } = useFetchData();
+const ProductMovie = () => {
+  const { data, isLoading, isError, error } = useFetchMov();
   return (
     <div className='grid  grid-cols-5 gap-5 m-5 '>
       {isLoading ? (
@@ -14,7 +14,7 @@ const Product = () => {
       ) : (
         data?.data.movies.map((movie) => (
           <div key={movie._id}>
-            <Link to={`/shows/${movie._id}`}>
+            <Link to={`/movies/${movie._id}`}>
               <div className='shadow py-2 px-3 rounded-md bg-gradient-to-b from-slate-700 to-slate-950 '>
                 <img
                   alt='Home'
@@ -38,4 +38,4 @@ const Product = () => {
     </div>
   );
 };
-export default Product;
+export default ProductMovie;

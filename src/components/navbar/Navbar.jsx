@@ -1,20 +1,23 @@
+import { NavLink } from 'react-router-dom';
+
 const Navbar = () => {
   return (
     <div className='flex w-[14rem] fixed h-full flex-col justify-between border-gray-700 border-e bg-gradient-to-b from-gray-900 to-black'>
       <div className='px-4 py-6 '>
-        <span className='grid h-10 w-full place-content-center rounded-lg bg-gray-800 font-bold text-lg text-gray-200'>
+        <span className='flex gap-2 items-center h-10 w-full place-content-center rounded-lg bg-gray-800 font-bold text-lg text-gray-200'>
+          <img src='/logo.png' alt='zudo' className='w-6' />
           Zudo
         </span>
         <ul className='mt-6 space-y-1'>
           <li>
-            <a
-              href=''
-              className='block rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-gray-700'
+            <NavLink
+              to='/'
+              className='block rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-gray-400'
             >
-              General
-            </a>
+              Home Page
+            </NavLink>
           </li>
-          <li>
+          {/* <li>
             <details className='group [&_summary::-webkit-details-marker]:hidden'>
               <summary className='flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-400 hover:bg-gray-600 hover:text-gray-700'>
                 <span className='text-sm font-medium'> Teams </span>
@@ -25,7 +28,7 @@ const Navbar = () => {
                     viewBox='0 0 20 20'
                     fill='currentColor'
                   >
-                    <path
+                    <to
                       fillRule='evenodd'
                       d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
                       clipRule='evenodd'
@@ -52,24 +55,24 @@ const Navbar = () => {
                 </li>
               </ul>
             </details>
-          </li>
+          </li> */}
           <li>
-            <a
-              href=''
+            <NavLink
+              to='/shows'
               className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
             >
-              Billing
-            </a>
+              Shows
+            </NavLink>
           </li>
           <li>
-            <a
-              href=''
+            <NavLink
+              to='/movies'
               className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-gray-700'
             >
-              Invoices
-            </a>
+              Movies
+            </NavLink>
           </li>
-          <li>
+          {/* <li>
             <details className='group [&_summary::-webkit-details-marker]:hidden'>
               <summary className='flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-400 hover:bg-gray-600 hover:text-gray-700'>
                 <span className='text-sm font-medium'> Account </span>
@@ -80,7 +83,7 @@ const Navbar = () => {
                     viewBox='0 0 20 20'
                     fill='currentColor'
                   >
-                    <path
+                    <to
                       fillRule='evenodd'
                       d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
                       clipRule='evenodd'
@@ -117,7 +120,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </details>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className='sticky inset-x-0 bottom-0 border-t border-gray-800'>
