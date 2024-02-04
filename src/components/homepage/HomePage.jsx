@@ -21,7 +21,7 @@ const ScrollSection = React.forwardRef(({ title, movies }, ref) => (
                 alt={movie.title}
                 height={600}
                 width={200}
-                className='rounded-md hover:shadow-xl hover:shadow-white hover:scale-105 transition-all duration-300 ease-in-out transform hover:z-50'
+                className='rounded-md hover:shadow-xl hover:shadow-white  transition-all duration-300 ease-in-out transform '
               />
             </div>
           </Link>
