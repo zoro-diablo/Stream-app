@@ -24,7 +24,7 @@ const ProductMovDetails = () => {
               <h1 className='text-[50px] font-bold text-gray-300 mx-5 mt-5 mb-2'>
                 {data?.movie.original_title}
               </h1>
-              <p className='text-gray-300 text-md ml-5 flex items-center'>
+              <div className='text-gray-300 text-md ml-5 flex items-center'>
                 {data?.movie.first_aired}
                 <div className='ml-3 my-2 flex gap-4'>
                   <div className='flex gap-2'>
@@ -50,7 +50,7 @@ const ProductMovDetails = () => {
                     </span>
                   </div>
                 </div>
-              </p>
+              </div>
 
               <div className='my-5 ml-2'>
                 {data?.movie.genres.map((genre, index) => (
@@ -69,7 +69,7 @@ const ProductMovDetails = () => {
             <img
               alt='Home'
               src={data?.movie.backdrop_path}
-              className='h-[460px] w-[530px] mt-2 rounded-md'
+              className='h-[420px] w-[530px] mt-2 rounded-md'
             />
           </div>
           <div className=' flex'>
@@ -93,7 +93,7 @@ const ProductMovDetails = () => {
                 <div className='grid-cols-3 gap-1 grid mt-2 mx-4 text-white'>
                   {data?.movie.sources.map((source, index) => (
                     <div key={index} className='bg-gray-950 hover:bg-gray-900'>
-                      <a href={source.info}>
+                      <div href={source.info}>
                         <div
                           style={{
                             margin: '10px',
@@ -103,12 +103,12 @@ const ProductMovDetails = () => {
                           <h2>{source.display_name}</h2>
                           <p>Type: {source.type}</p>
                           <p>
-                            <a href={source.link}>
+                            <a href={source.link} className='text-blue-300'>
                               Watch on {source.display_name}
                             </a>
                           </p>
                         </div>
-                      </a>
+                      </div>
                     </div>
                   ))}
                 </div>
