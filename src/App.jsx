@@ -8,8 +8,9 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import RootLayout from './layout/RootLayout';
 import Home from './routes/Home';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
+import ProductDetails from './components/product/ProductDetails';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
       <Route index element={<Home />} />
+      <Route path='details/:movieId' element={<ProductDetails />} />
     </Route>
   )
 );
