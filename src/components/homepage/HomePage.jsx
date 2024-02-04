@@ -10,6 +10,7 @@ const HomePage = () => {
   const trendingMoviesScrollRef = useRef(null);
   const animationMovScrolls = useRef(null);
   const showsScrollTrending = useRef(null);
+  const newShowTren = useRef(null);
 
   const setupHorizontalScroll = (ref) => {
     const handleWheel = (e) => {
@@ -36,12 +37,14 @@ const HomePage = () => {
       trendingMoviesScrollRef
     );
     const trendingShowsCleanUp = setupHorizontalScroll(showsScrollTrending);
+    const newShowScrolls = setupHorizontalScroll(newShowTren);
 
     return () => {
       newMoviesCleanup();
       trendingMoviesCleanup();
       animationMovScrollRef();
       trendingShowsCleanUp();
+      newShowScrolls();
     };
   }, []);
 
@@ -51,6 +54,9 @@ const HomePage = () => {
   );
   const trendingShows = data?.data.filter(
     (item) => item.title === 'Most Trending Shows'
+  );
+  const newShows = data?.data.filter(
+    (item) => item.title === 'New Shows'
   );
 
   return (
@@ -75,13 +81,17 @@ const HomePage = () => {
                     <div key={index} className='item flex px-4 text-white'>
                       <div className='flex '>
                         {item.movies.map((movie) => (
-                          <div key={movie._id} className='flex-none mr-4'>
-                            <img
-                              src={movie.poster_path}
-                              alt={movie.title}
-                              height={600}
-                              width={200}
-                            />
+                          <div key={movie._id}>
+                            <Link to={`/movies/${movie._id}`}>
+                              <div className='flex-none mr-4'>
+                                <img
+                                  src={movie.poster_path}
+                                  alt={movie.title}
+                                  height={600}
+                                  width={200}
+                                />
+                              </div>
+                            </Link>
                           </div>
                         ))}
                       </div>
@@ -102,13 +112,17 @@ const HomePage = () => {
                 <div key={index} className='item flex px-4 text-white'>
                   <div className='flex '>
                     {item.movies.map((movie) => (
-                      <div key={movie._id} className='flex-none mr-4'>
-                        <img
-                          src={movie.poster_path}
-                          alt={movie.title}
-                          height={600}
-                          width={200}
-                        />
+                      <div key={movie._id}>
+                        <Link to={`/movies/${movie._id}`}>
+                          <div className='flex-none mr-4'>
+                            <img
+                              src={movie.poster_path}
+                              alt={movie.title}
+                              height={600}
+                              width={200}
+                            />
+                          </div>
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -128,13 +142,17 @@ const HomePage = () => {
                 <div key={index} className='item flex px-4 text-white'>
                   <div className='flex '>
                     {item.movies.map((movie) => (
-                      <div key={movie._id} className='flex-none mr-4'>
-                        <img
-                          src={movie.poster_path}
-                          alt={movie.title}
-                          height={600}
-                          width={200}
-                        />
+                      <div key={movie._id}>
+                        <Link to={`/movies/${movie._id}`}>
+                          <div className='flex-none mr-4'>
+                            <img
+                              src={movie.poster_path}
+                              alt={movie.title}
+                              height={600}
+                              width={200}
+                            />
+                          </div>
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -155,7 +173,37 @@ const HomePage = () => {
                   <div className='flex '>
                     {item.movies.map((movie) => (
                       <div key={movie._id}>
-                        <Link to={`/details/${movie._id}`}>
+                        <Link to={`/shows/${movie._id}`}>
+                          <div className='flex-none mr-4'>
+                            <img
+                              src={movie.poster_path}
+                              alt={movie.title}
+                              height={600}
+                              width={200}
+                            />
+                          </div>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='mx-auto max-w-2xl px-4 py-2  lg:max-w-7xl lg:px-8'>
+            <h2 className='font-semibold my-4 text-white ml-4'>
+              New Shows
+            </h2>
+            <div
+              ref={newShowTren}
+              className='flex overflow-auto scroll-container'
+            >
+              {newShows?.map((item, index) => (
+                <div key={index} className='item flex px-4 text-white'>
+                  <div className='flex '>
+                    {item.movies.map((movie) => (
+                      <div key={movie._id}>
+                        <Link to={`/shows/${movie._id}`}>
                           <div className='flex-none mr-4'>
                             <img
                               src={movie.poster_path}
