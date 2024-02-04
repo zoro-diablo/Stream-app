@@ -15,7 +15,7 @@ const Product = () => {
         data?.data.movies.map((movie) => (
           <div key={movie._id}>
             <Link to={`/shows/${movie._id}`}>
-              <div className='shadow py-2 px-3 rounded-md bg-gradient-to-b from-slate-700 to-slate-950 '>
+              <div className='shadow py-2 px-3 rounded-md bg-gradient-to-b from-slate-700 to-slate-950 hover:shadow-md hover:shadow-white'>
                 <img
                   alt='Home'
                   src={movie.backdrop_path}

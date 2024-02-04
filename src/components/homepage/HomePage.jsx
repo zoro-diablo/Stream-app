@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Error from '../error/Error';
 import Loader from '../loader/Loader';
 
-// Define a reusable component for each scrollable section
 const ScrollSection = React.forwardRef(({ title, movies }, ref) => (
   <div className='mx-auto max-w-2xl px-4 py-2 lg:max-w-7xl lg:px-8'>
     <h2 className='font-semibold my-4 text-white ml-4'>{title}</h2>
@@ -35,7 +34,6 @@ const ScrollSection = React.forwardRef(({ title, movies }, ref) => (
 const HomePage = () => {
   const { data, isLoading, isError, error } = useHomeFetch();
 
-  // Create a ref for each scrollable section
   const newMoviesScrollRef = useRef(null);
   const trendingMoviesScrollRef = useRef(null);
   const animationMovScrolls = useRef(null);
@@ -47,7 +45,6 @@ const HomePage = () => {
   const NewAddScroll = useRef(null);
   const SciScroll = useRef(null);
 
-  // Function to set up horizontal scrolling
   const setupHorizontalScroll = (ref) => {
     const handleWheel = (e) => {
       if (ref.current) {
@@ -60,7 +57,6 @@ const HomePage = () => {
     return () => ref.current?.removeEventListener('wheel', handleWheel);
   };
 
-  // useEffect to set up and clean up the event listeners
   useEffect(() => {
     const cleanupFunctions = [
       setupHorizontalScroll(newMoviesScrollRef),
@@ -81,7 +77,6 @@ const HomePage = () => {
   if (isLoading) return <Loader />;
   if (isError) return <Error error={error} />;
 
-  // Dynamically identify and assign the correct ref based on the section title
   const sectionRefs = {
     'New Movies': newMoviesScrollRef,
     'Best Animation Movies': animationMovScrolls,
@@ -92,13 +87,12 @@ const HomePage = () => {
     'New Shows': NewShwScroll,
     'Get a shot of adrenaline': NewAddScroll,
     'Sci-Fi TV': SciScroll,
-    // Add more mappings as needed
   };
 
   return (
     <div className='bg-gradient-to-b from-black to-slate-950'>
       {data?.data.map((section, index) => {
-        const ref = sectionRefs[section.title] || trendingMoviesScrollRef; // Default to trendingMoviesScrollRef if not matched
+        const ref = sectionRefs[section.title] || trendingMoviesScrollRef; 
         return (
           <ScrollSection
             key={index}
