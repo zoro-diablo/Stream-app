@@ -5,6 +5,7 @@ import Loader from '../loader/Loader';
 
 const ProductMovie = () => {
   const { data, isLoading, isError, error } = useFetchMov();
+  const movies = data?.data?.movies ?? [];
   return (
     <div className='grid  grid-cols-5 gap-5 m-5 '>
       {isLoading ? (
@@ -12,7 +13,7 @@ const ProductMovie = () => {
       ) : isError ? (
         <Error error={error} />
       ) : (
-        data?.data.movies.map((movie) => (
+        movies.map((movie) => (
           <div key={movie._id}>
             <Link to={`/movies/${movie._id}`}>
               <div className='shadow py-2 px-3 rounded-md bg-gradient-to-b from-slate-700 to-slate-950 hover:shadow-md hover:shadow-white'>

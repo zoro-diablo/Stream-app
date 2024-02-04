@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import Error from '../error/Error';
 import Loader from '../loader/Loader';
 
-const ScrollSection = React.forwardRef(({ title, movies }, ref) => (
+const ScrollSection = React.forwardRef(({ title, movies = [] }, ref) => (
   <div className='mx-auto max-w-2xl px-4 py-2 lg:max-w-7xl lg:px-8'>
     <h2 className='font-semibold my-4 text-white ml-4'>{title}</h2>
     <div ref={ref} className='flex overflow-auto no-wrap scroll-container'>
-      {movies?.map((movie) => (
+      {movies.map((movie) => ( // Here movies is guaranteed to be an array
         <div key={movie._id} className='item flex px-4 text-white no-wrap'>
           <Link
             to={`/${title.includes('Shows') ? 'shows' : 'movies'}/${movie._id}`}
@@ -30,6 +30,7 @@ const ScrollSection = React.forwardRef(({ title, movies }, ref) => (
     </div>
   </div>
 ));
+
 
 const HomePage = () => {
   const { data, isLoading, isError, error } = useHomeFetch();
@@ -89,15 +90,17 @@ const HomePage = () => {
     'Sci-Fi TV': SciScroll,
   };
 
+  const sections = Array.isArray(data?.data) ? data.data : [];
+
   return (
     <div className='bg-gradient-to-b from-black to-slate-950'>
-      {data?.data.map((section, index) => {
-        const ref = sectionRefs[section.title] || trendingMoviesScrollRef; 
+      {sections.map((section, index) => {
+        const ref = sectionRefs[section.title] || trendingMoviesScrollRef;
         return (
           <ScrollSection
             key={index}
             title={section.title}
-            movies={section.movies}
+            movies={section.movies || []} // Ensure movies is always an array
             ref={ref}
           />
         );

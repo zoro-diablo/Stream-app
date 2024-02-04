@@ -5,14 +5,18 @@ import Loader from '../loader/Loader';
 
 const Product = () => {
   const { data, isLoading, isError, error } = useFetchData();
+
+  // Check if movies data is available before trying to render it
+  const movies = data?.data?.movies ?? [];
+
   return (
-    <div className='grid  grid-cols-5 gap-5 m-5 '>
+    <div className='grid grid-cols-5 gap-5 m-5'>
       {isLoading ? (
         <Loader />
       ) : isError ? (
         <Error error={error} />
       ) : (
-        data?.data.movies.map((movie) => (
+        movies.map((movie) => (
           <div key={movie._id}>
             <Link to={`/shows/${movie._id}`}>
               <div className='shadow py-2 px-3 rounded-md bg-gradient-to-b from-slate-700 to-slate-950 hover:shadow-md hover:shadow-white'>
