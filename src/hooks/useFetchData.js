@@ -5,8 +5,8 @@ const options = {
   method: 'GET',
   url: 'https://movies-api14.p.rapidapi.com/shows',
   headers: {
-    'X-RapidAPI-Key': 'd5ac398defmsh55062f5a3532541p113e13jsnefef60d65f97',
-    'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com',
+    'X-RapidAPI-Key': 'bb435cecc7msh5e15930da96ba0ep1d7249jsnbe1b75ade199',
+    'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
   },
 };
 
