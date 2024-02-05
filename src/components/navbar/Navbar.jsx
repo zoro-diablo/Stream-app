@@ -36,6 +36,14 @@ const Navbar = () => {
               Movies
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to='favorites'
+              className='block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-600 hover:text-white'
+            >
+              Favorites
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div className='sticky inset-x-0 bottom-0 border-t border-gray-800'>

@@ -4,14 +4,14 @@ import ReactPlayer from 'react-player';
 import Loader from '../loader/Loader';
 import Error from '../error/Error';
 
+
 const ProductDetails = () => {
   const { movieId } = useParams();
-  const { data, isLoading, isError, error ,isFetching} = useFetchDetails(movieId);
+  const { data, isLoading, isError, error } =
+    useFetchDetails(movieId);
   return (
     <div>
-      {isFetching ? (
-        <Loader />
-      ) :isLoading ? (
+      { isLoading ? (
         <div>
           <Loader />
         </div>
@@ -23,7 +23,7 @@ const ProductDetails = () => {
         <div className='m-5 bg-gradient-to-br from-slate-950 to-slate-800'>
           <div className='flex justify-between mx-10'>
             <div className=''>
-              <h1 className='text-[50px] font-bold text-gray-300 mx-5 mt-5 mb-2'>
+              <h1 className='text-[50px] font-bold text-gray-300 mx-5 mt-5 mb-2 flex'>
                 {data?.show.original_title}
               </h1>
               <div className='text-gray-300 text-md ml-5 flex items-center'>
@@ -74,6 +74,7 @@ const ProductDetails = () => {
               className='h-[420px] w-[530px] mt-2 rounded-md'
             />
           </div>
+
           <div className=' flex'>
             <div>
               <div>

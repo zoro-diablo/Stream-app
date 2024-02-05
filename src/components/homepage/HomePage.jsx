@@ -76,7 +76,8 @@ const HomePage = () => {
 
   if (isLoading) return <Loader />;
   if (isError) return <Error error={error} />;
-  if (isFetching) return <Loader />;
+
+
 
   const sectionRefs = {
     'New Movies': newMoviesScrollRef,
@@ -93,7 +94,7 @@ const HomePage = () => {
   const sections = Array.isArray(data?.data) ? data.data : [];
 
   return (
-    <div className='bg-gradient-to-b from-black to-slate-950'>
+    <div className='relative bg-gradient-to-b from-black to-slate-950'>
       {sections.map((section, index) => {
         const ref = sectionRefs[section.title] || trendingMoviesScrollRef;
         return (
@@ -105,6 +106,14 @@ const HomePage = () => {
           />
         );
       })}
+      {(isFetching) && (
+        <img
+          src='/loading.gif' 
+          alt='Loading...'
+          className='fixed bottom-10 right-10 text-white' 
+          width={30} 
+        />
+      )}
     </div>
   );
 };

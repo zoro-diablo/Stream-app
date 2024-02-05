@@ -6,20 +6,22 @@ import {
 } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import RootLayout from './layout/RootLayout';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
+// Components
 import ProductDetails from './components/product/ProductDetails';
 import ProductMovDetails from './components/product/ProductMovDetails';
 import HomePage from './components/homepage/HomePage';
 import ProductMovie from './components/product/ProductMovie';
 import Product from './components/product/Product';
-import MoviesLayout from './layout/MoviesLayout';
-import ShowLayout from './layout/ShowLayout';
 import RouteError from './components/error/RouteError';
 import NotFoundPage from './components/error/NotFoundPage';
-
-const queryClient = new QueryClient();
+import Favorites from './components/favorites/Favorites';
+// Layouts
+import RootLayout from './layout/RootLayout';
+import MoviesLayout from './layout/MoviesLayout';
+import ShowLayout from './layout/ShowLayout';
+import FavLayout from './layout/FavLayout';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,10 +35,15 @@ const router = createBrowserRouter(
         <Route index element={<ProductMovie />} />
         <Route path=':videoId' element={<ProductMovDetails />} />
       </Route>
+      <Route path='favorites' element={<FavLayout />} >
+        <Route index element={<Favorites />} />
+      </Route>
       <Route path='*' element={<NotFoundPage />} />
     </Route>
   )
 );
+
+const queryClient = new QueryClient();
 
 function App() {
   return (

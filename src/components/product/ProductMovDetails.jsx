@@ -4,14 +4,13 @@ import ReactPlayer from 'react-player';
 import Loader from '../loader/Loader';
 import Error from '../error/Error';
 
+
 const ProductMovDetails = () => {
   const { videoId } = useParams();
-  const { data, isLoading, isError, error,isFetching } = useFetchDetailsMov(videoId);
+  const { data, isLoading, isError, error } = useFetchDetailsMov(videoId);
   return (
     <div>
-      {isFetching ? (
-        <Loader />
-      ) :isLoading ? (
+      {isLoading ? (
         <div>
           <Loader />
         </div>
@@ -51,6 +50,7 @@ const ProductMovDetails = () => {
                       {data?.movie.vote_count}
                     </span>
                   </div>
+                 
                 </div>
               </div>
 
