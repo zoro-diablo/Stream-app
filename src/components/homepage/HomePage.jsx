@@ -77,6 +77,8 @@ const HomePage = () => {
   if (isLoading) return <Loader />;
   if (isError) return <Error error={error} />;
 
+ 
+
   const sectionRefs = {
     'New Movies': newMoviesScrollRef,
     'Best Animation Movies': animationMovScrolls,

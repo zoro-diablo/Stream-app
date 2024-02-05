@@ -4,6 +4,7 @@ import Error from '../error/Error';
 import { addItemtoFavorite, removeItemfromFavorite } from '../../redux/features/movieSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import Loader from '../loader/Loader';
+import { useEffect } from 'react';
 
 const Product = () => {
   const { data, isLoading, isError, error, isFetching } = useFetchData();
@@ -23,6 +24,10 @@ const Product = () => {
       dispatch(addItemtoFavorite(movie));
     }
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <div className='relative m-5 h-full'> 
