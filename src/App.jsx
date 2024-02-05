@@ -8,6 +8,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // Components
 import ProductDetails from './components/product/ProductDetails';
 import ProductMovDetails from './components/product/ProductMovDetails';
@@ -35,7 +37,7 @@ const router = createBrowserRouter(
         <Route index element={<ProductMovie />} />
         <Route path=':videoId' element={<ProductMovDetails />} />
       </Route>
-      <Route path='favorites' element={<FavLayout />} >
+      <Route path='favorites' element={<FavLayout />}>
         <Route index element={<Favorites />} />
       </Route>
       <Route path='*' element={<NotFoundPage />} />
@@ -49,6 +51,17 @@ function App() {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
+        <ToastContainer
+          position='bottom-right'
+          theme='dark'
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          draggable
+          pauseOnHover
+        />
         <RouterProvider router={router} />
         <ReactQueryDevtools position='bottom-right' />
       </QueryClientProvider>
