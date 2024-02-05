@@ -6,10 +6,12 @@ import Error from '../error/Error';
 
 const ProductMovDetails = () => {
   const { videoId } = useParams();
-  const { data, isLoading, isError, error } = useFetchDetailsMov(videoId);
+  const { data, isLoading, isError, error,isFetching } = useFetchDetailsMov(videoId);
   return (
     <div>
-      {isLoading ? (
+      {isFetching ? (
+        <Loader />
+      ) :isLoading ? (
         <div>
           <Loader />
         </div>

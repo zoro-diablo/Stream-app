@@ -17,6 +17,7 @@ import Product from './components/product/Product';
 import MoviesLayout from './layout/MoviesLayout';
 import ShowLayout from './layout/ShowLayout';
 import RouteError from './components/error/RouteError';
+import NotFoundPage from './components/error/NotFoundPage';
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
         <Route index element={<ProductMovie />} />
         <Route path=':videoId' element={<ProductMovDetails />} />
       </Route>
+      <Route path='*' element={<NotFoundPage />} />
     </Route>
   )
 );
