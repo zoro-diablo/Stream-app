@@ -4,11 +4,13 @@ import Error from '../error/Error';
 import Loader from '../loader/Loader';
 
 const ProductMovie = () => {
-  const { data, isLoading, isError, error } = useFetchMov();
+  const { data, isLoading, isError, error , isFetching } = useFetchMov();
   const movies = data?.data?.movies ?? [];
   return (
     <div className='grid  grid-cols-5 gap-5 m-5 '>
-      {isLoading ? (
+      {isFetching ? (
+        <Loader />
+      ) : isLoading ? (
         <Loader />
       ) : isError ? (
         <Error error={error} />

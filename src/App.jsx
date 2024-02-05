@@ -16,12 +16,13 @@ import ProductMovie from './components/product/ProductMovie';
 import Product from './components/product/Product';
 import MoviesLayout from './layout/MoviesLayout';
 import ShowLayout from './layout/ShowLayout';
+import RouteError from './components/error/RouteError';
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<RootLayout />}>
+    <Route path='/' element={<RootLayout />} errorElement={<RouteError />}>
       <Route index element={<HomePage />} />
       <Route path='shows' element={<ShowLayout />}>
         <Route index element={<Product />} />

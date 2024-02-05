@@ -4,14 +4,15 @@ import Error from '../error/Error';
 import Loader from '../loader/Loader';
 
 const Product = () => {
-  const { data, isLoading, isError, error } = useFetchData();
+  const { data, isLoading, isError, error, isFetching } = useFetchData();
 
-  // Check if movies data is available before trying to render it
   const movies = data?.data?.movies ?? [];
 
   return (
     <div className='grid grid-cols-5 gap-5 m-5'>
-      {isLoading ? (
+      {isFetching ? (
+        <Loader />
+      ) : isLoading ? (
         <Loader />
       ) : isError ? (
         <Error error={error} />
